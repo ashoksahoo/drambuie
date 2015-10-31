@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= message
+    h2= error.status
+    pre #{error.stack}
+block user
+    if user
+        li
+            a(href='/edit-profile') Profile
+        li
+            a(href='/logout') Logout
+    else
+        li
+            a(href='/login') Login

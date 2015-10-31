@@ -1,0 +1,30 @@
+extends layout
+block content
+    h1 Profile
+    hr
+    if user.role.code == 2
+        div
+            h3 #{profile.startup.startup_name}
+            div #{profile.startup.intro}
+            h4 Looking For
+            div #{profile.startup.roles}
+    if user.role.code == 1
+        div
+            h4 #{profile.name}
+            div= profile.mobile
+            div= profile.candidate.experience
+            div= profile.candidate.roles
+    //hr
+    //pre #{profile}
+block user
+    if user
+        li
+            a(href='/edit-profile') Edit Profile
+        li
+            a(href='/logout') Logout
+    else
+        li
+            a(href='/login') Login
+
+
+

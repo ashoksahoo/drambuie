@@ -1,0 +1,19 @@
+extends layout
+block content
+    h1 Profile
+    .alert.alert-info You can edit your profile here, hit
+    form(role='form', method='POST', action="/profile" )
+        .form-group
+            h3 #{profile.name}
+        input.btn.btn-success.pull-right(type="Submit" Value='Save')
+    .clearfix
+block user
+    if user
+        li
+            a(href='/logout') Logout
+    else
+        li
+            a(href='/login') Login
+
+
+

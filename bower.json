@@ -1,0 +1,21 @@
+{
+  "name": "Headstart",
+  "version": "0.0.1",
+  "authors": [
+    "Ashok Sahoo <hello@ashok.io>"
+  ],
+  "description": "Headstart higher",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0",
+    "jquery": "~2.1.4"
+  }
+}
