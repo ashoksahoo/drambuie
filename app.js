@@ -14,7 +14,7 @@ var MongoStore = require('connect-mongo')(session);
 var passport = require('passport');
 var config = require('./config/configurations');
 
-var db = process.env.MONGOHQ_URL || 'mongodb://localhost/drambuie-dev';
+var db = process.env.MONGOHQ_URI || 'mongodb://localhost/drambuie-dev';
 var connection = mongoose.connect(db).connection;
 connection.on('error', function(err) { console.error(err.message); });
 
