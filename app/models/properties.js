@@ -8,6 +8,7 @@ var PropertySchema = new Schema({
     date : Date,
     name : String,
     address: String,
+    amount: Number,
     images: [],
     googleMaps: {}
 });

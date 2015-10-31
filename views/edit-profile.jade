@@ -2,9 +2,15 @@ extends layout
 block content
     h1 Profile
     .alert.alert-info You can edit your profile here, hit
-    form(role='form', method='POST', action="/profile" )
+        b  Save
+        |  after you are done editing.
+    form(role='form', method='POST', action="/api/profile" )
+        div
         .form-group
             h3 #{profile.name}
+            .form-group
+                label About You
+                textarea.form-control(name='about')=profile.about
         input.btn.btn-success.pull-right(type="Submit" Value='Save')
     .clearfix
 block user

@@ -21,3 +21,7 @@ exports.updateProfile = function (user, profile, callback) {
 exports.getProperties = function (page, callback) {
     Property.find({}).sort('-date').skip((page - 1) * 10).limit(10).exec(callback)
 }
+exports.createProperty = function (property, callback) {
+    var record = new Property(property);
+    record.save(callback);
+};

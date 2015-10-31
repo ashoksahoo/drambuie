@@ -20,10 +20,17 @@ module.exports = function (app, passport) {
         res.redirect('/login');
     });
     //candidates
-    app.post('/profile', auth.isLoggedIn, controller.updateProfile);
-    app.get('/profile', auth.isLoggedIn, controller.updateProfile);
+    app.post('/api/profile', auth.isLoggedIn, controller.updateProfile);
+    app.get('/profile', auth.isLoggedIn, function (re, res) {
+        res.render('profile');
+    });
 
     app.post('/api/login', function (req, res, next) {
+        return passport.authenticate('local', function (err, user, info) {
+            return authResponse.loginResponse(req, res, err, user, info);
+        })(req, res, next);
+    });
+    app.post('/api/register', function (req, res, next) {
         return passport.authenticate('local', function (err, user, info) {
             return authResponse.loginResponse(req, res, err, user, info);
         })(req, res, next);

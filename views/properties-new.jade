@@ -1,0 +1,41 @@
+extends layout
+block content
+    h1 Create New property listing
+    hr
+    form.form(role='form', method='POST', action="/api/properties" )
+        .form-group
+            label Title
+            input.form-control(name='name')
+        .form-group
+            label Date of Open House
+            input.form-control(name='date', type='date')
+        .form-group
+            label Rent
+            input.form-control(name='amount', type='number')
+        .form-group
+            label Address
+            textarea.form-control(name='address')
+        .form-group
+            label Image Url 1
+            input.form-control(name='images')
+        .form-group
+            label Image Url 2
+            input.form-control(name='images')
+        .form-group
+            label Image Url 3
+            input.form-control(name='images')
+        input.btn.btn-success.pull-right(type="Submit" Value='Save')
+    //hr
+    //pre #{profile}
+block user
+    if user
+        li
+            a(href='/edit-profile') Edit Profile
+        li
+            a(href='/logout') Logout
+    else
+        li
+            a(href='/login') Login
+
+
+

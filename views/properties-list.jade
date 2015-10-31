@@ -1,0 +1,28 @@
+extends layout
+block content
+    h1 ALl listings
+    hr
+    ol
+        each val in list
+            h3
+                li= val.name
+            div=val.address
+            div=val.date
+            img.col-lg-4(src="https://maps.googleapis.com/maps/api/staticmap?center=#{val.address}&zoom=13&size=400x300&markers=#{val.googleMaps[0].geometry.location.lat},#{val.googleMaps[0].geometry.location.lng}&sensor=false")
+            .clearfix
+            each image in val.images
+                img.col-lg-4(src=image)
+
+    //pre #{profile}
+block user
+    if user
+        li
+            a(href='/edit-profile') Edit Profile
+        li
+            a(href='/logout') Logout
+    else
+        li
+            a(href='/login') Login
+
+
+

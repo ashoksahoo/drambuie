@@ -28,7 +28,6 @@ exports.loginResponse = function(req, res, err, user, info) {
         res.cookie('user', JSON.stringify({
             name: user.name
         }));
-
-        return res.redirect('/');
+        res.send(user);
     }
 };
