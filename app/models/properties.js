@@ -4,6 +4,12 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var PropertySchema = new Schema({});
+var PropertySchema = new Schema({
+    date : Date,
+    name : String,
+    address: String,
+    images: [],
+    googleMaps: {}
+});
 
 module.exports = mongoose.model('Property', PropertySchema);
